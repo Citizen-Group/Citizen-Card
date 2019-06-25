@@ -1,0 +1,11 @@
+{
+  "name": "citizen-card-services",
+  "version": "0.0.1",
+  "description": "An trust based loyalty card system made by Citizen IG",
+  "main": "index.js",
+  "dependencies": {
+    "express": "latest"
+  },
+  "author": "Citizen Information Group <control.ottawa@gmail.com> (http://citizeninformationgroup.com)",
+  "license": "ISC"
+}
