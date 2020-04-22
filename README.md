@@ -1,6 +1,22 @@
-# Citizen-Card
-The Citizen Card is RFID enabled loyalty card system that serves as an access point for community services.
+Resource Server
+==================
 
-This repository is for development of the infrastructure to support the Citizen Card. 
+This is a resource server example.
 
-The detailed RFID/Card development is handled in [CC-RFID](https://github.com/Citizen-Group/CC-RFID)
+# Installation
+
+First install and run the authorization server
+```
+git clone https://github.com/FrankHassanabad/Oauth2orizeRecipes.git
+cd Oauth2orizeRecipes/authorization-server
+npm install
+npm start
+```
+
+Then install and run this example
+```
+cd Oauth2orizeRecipes/resource-server
+npm install
+npm start
+open https://localhost:4000/infosso
+```
