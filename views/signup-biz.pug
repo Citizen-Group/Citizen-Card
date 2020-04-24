@@ -1,0 +1,117 @@
+extends layout
+
+block content
+  body(id="page-top")
+    <!-- Navigation -->
+    nav.navbar.navbar-expand-lg.bg-secondary.text-uppercase.fixed-top(id="mainNav")
+      .container
+        a.navbar-brand.js-scroll-trigger(href="#page-top") Citizen Card
+
+    form(method="post" action="/signup")
+
+    <!-- Masthead -->
+    header.masthead.bg-primary.text-white.text-center
+      .container.d-flex.align-items-center.flex-column
+
+        <!-- Masthead Heading -->
+        h1.masthead-heading.text-uppercase.mb-0 Partner
+        h1.masthead-heading.text-uppercase.mb-0 Welcome
+
+        <!-- Icon Divider -->
+        .divider-custom.divider-light
+          .divider-custom-line
+          .divider-custom-icon
+            i.fas.fa-id-card-alt
+          .divider-custom-line
+
+        <!-- Masthead Subheading -->
+        p.masthead-subheading Thank you for your interest in a 
+          i Citizen Card for Partners
+        p.masthead-subheading Partners are organizations that want to empower good citizens. They realise by investing in the public and rewarding like minded people, society flourishes and everyone wins.
+        p.masthead-subheading Citizen provides an easy way for you to support your community, learn about your customers and get loyal fans that support your ideas and your business.
+        p.masthead-subheading Use the form below to apply to be a partners and start rewarding yourself for the good you do for this city.
+    
+    <!-- Personal Section -->
+    section.page-section(id="CitizenID")
+      .container
+        .row
+          .col-lg.text-center
+            <!-- Section Heading -->
+            h4.page-section-heading.text-uppercase.text-secondary Existing Member?
+            p If you have an existing Citizen ID. Please 
+              a(href="/login") login 
+              | and access your profile page to apply for an partner account
+            p If you don't have an Citizen ID. This form will create a Citizen ID and the application for an partner account
+            p If you would like to create just an ID at this time. Please click 
+              a(href="/signup") here
+    
+    <!-- Personal Section -->
+    section.page-section(id="Profile")
+      .container
+        .row
+          .col-lg
+            <!-- Section Heading -->
+            h2.page-section-heading.text-center.text-uppercase.text-secondary.mb-0 Profile Information
+
+            <!-- Icon Divider -->
+            .divider-custom
+              .divider-custom-line
+              .divider-custom-icon
+                i.fas.fa-user
+              .divider-custom-line
+    
+    <!-- User Details -->
+    section.page-section(id="Details")
+      .container
+        .row
+          .col-lg
+            <!-- Section Heading -->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Detail Information</h2>
+
+            <!-- Icon Divider -->
+            <div class="divider-custom">
+              <div class="divider-custom-line"></div>
+              <div class="divider-custom-icon">
+                <i class="fas fa-info-circle"></i>
+              </div>
+              <div class="divider-custom-line"></div>
+            </div>
+            
+    <!-- Footer -->
+    footer.footer.text-center
+      .container
+        .row
+          <!-- Footer Location -->
+          .col
+            h4.text-uppercase.mb-4 Thank you!
+            button.btn.btn-primary(id="submitbutton" type="submit") Submit
+
+    <!-- Copyright Bar -->
+    section.copyright.py-4.text-center.text-white
+      .container
+        small Made in Bayshore with ❤ by 
+          a(href="http://citizeninformationgroup.com") Citizen IG
+          |  2020
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed ">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+    </div>
+
+      <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/freelancer.min.js"></script>

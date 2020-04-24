@@ -10,9 +10,12 @@ const sso      = require('./sso');
  * @param   {Object}   res - The response to show the server is running
  * @returns {undefined}
  */
-exports.index = (req, res) => {
-  res.render('index');
-};
+exports.index = [
+  //login.ensureLoggedIn(),
+  (req, res) => {
+    res.render('index');
+  },
+];
 
 /**
  * https://localhost:4000/signup (GET)
@@ -37,6 +40,29 @@ exports.signupForm = (req, res) => {
 
 
 /**
+ * The signup page tailored to business
+ * https://localhost:4000/signup-biz (GET)
+ * @param   {Object}   req - The request, which nothing is done with
+ * @param   {Object}   res - The response to show the server is running
+ * @returns {undefined}
+ */
+exports.signupBiz = (req, res) => {
+  res.render('signup-biz');
+};
+
+
+/**
+ * https://localhost:4000/signup-biz (POST)
+ * @param   {Object}   req - The request, which nothing is done with
+ * @param   {Object}   res - The response to show the server is running
+ * @returns {undefined}
+ */
+exports.signupBizForm = (req, res) => {
+  res.send('Thanks for using this service!');
+};
+
+
+/**
  * https://localhost:4000/login (GET)
  * The OAuth2 Resource Owner Password Credentials login form
  * being rendered.  Use this to enter a user id and password
@@ -53,7 +79,7 @@ exports.loginForm = (req, res) => {
 /**
  * https://localhost:4000/login (POST)
  *
- * The login endpoint when a post occurs through the login form
+ * The login endpoint when a post occurs through the login form (see auth)
  */
 exports.login = passport.authenticate('local', { successReturnToOrRedirect: '/', failureRedirect: '/login' });
 

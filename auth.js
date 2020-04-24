@@ -110,6 +110,7 @@ passport.serializeUser((user, done) => {
   done(null, user);
 });
 
+// Called on page loag with verification. Right now just pulling session and passing it though
 passport.deserializeUser((user, done) => {
   done(null, user);
 });
