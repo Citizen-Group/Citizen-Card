@@ -7,12 +7,34 @@ const sso      = require('./sso');
 /**
  * https://localhost:4000/
  * @param   {Object}   req - The request, which nothing is done with
- * @param   {Object}   res - The response that we send the string of "OAuth 2.0 Resource Server"
+ * @param   {Object}   res - The response to show the server is running
  * @returns {undefined}
  */
 exports.index = (req, res) => {
-  res.send('OAuth 2.0 Resource Server');
+  res.render('index');
 };
+
+/**
+ * https://localhost:4000/signup (GET)
+ * @param   {Object}   req - The request, which nothing is done with
+ * @param   {Object}   res - The response to show the server is running
+ * @returns {undefined}
+ */
+exports.signup = (req, res) => {
+  res.render('signup');
+};
+
+
+/**
+ * https://localhost:4000/signup (POST)
+ * @param   {Object}   req - The request, which nothing is done with
+ * @param   {Object}   res - The response to show the server is running
+ * @returns {undefined}
+ */
+exports.signupForm = (req, res) => {
+  res.send('Thanks for using this service!');
+};
+
 
 /**
  * https://localhost:4000/login (GET)
@@ -21,7 +43,7 @@ exports.index = (req, res) => {
  * which will then be sent to the Authorization server through
  * the grant type of "password"
  * @param   {Object}   req - The request, which nothing is done with
- * @param   {Object}   res - The response, which the login page of views/login.ejs is rendered
+ * @param   {Object}   res - The response, which the login page of views/login.pug rendered
  * @returns {undefined}
  */
 exports.loginForm = (req, res) => {

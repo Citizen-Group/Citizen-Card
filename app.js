@@ -15,7 +15,8 @@ const sso            = require('./sso');
 
 // Express configuration
 const app = express();
-app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 app.use(cookieParser());
 
 // Session Configuration
@@ -52,6 +53,8 @@ app.use((err, req, res, next) => {
 require('./auth');
 
 app.get('/',                      site.index);
+app.get('/signup',                site.signup);
+app.post('/signup',               site.signupForm);
 app.get('/login',                 site.loginForm);
 app.post('/login',                site.login);
 app.get('/info',                  site.info);
