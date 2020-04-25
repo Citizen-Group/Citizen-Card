@@ -40,6 +40,7 @@ passport.use(new LocalStrategy((username, password, done) => {
       Authorization: `Basic ${basicAuth}`,
     },
   }, (error, response, body) => {
+    try {
     const { access_token, refresh_token, expires_in } = JSON.parse(body);
     if (response.statusCode === 200 && access_token) {
       // TODO: scopes
@@ -53,6 +54,9 @@ passport.use(new LocalStrategy((username, password, done) => {
       })
       .then(done(null, { accessToken: access_token, refreshToken: refresh_token }))
       .catch(() => done(null, false));
+    }
+    } catch (e) {
+        done(null,false);
     }
   });
 }));

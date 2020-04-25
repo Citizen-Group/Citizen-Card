@@ -54,7 +54,7 @@ require('./auth');
 
 app.get('/',                      site.index);
 app.get('/signup',                site.signup);
-app.post('/signup',               site.signupForm);
+app.post('/signup',               [site.signupForm,site.index]);
 app.get('/signup-biz',            site.signupBiz);
 app.post('/signup-biz',           site.signupBizForm);
 app.get('/login',                 site.loginForm);
