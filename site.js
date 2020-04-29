@@ -3,6 +3,8 @@
 const login    = require('connect-ensure-login');
 const passport = require('passport');
 const sso      = require('./sso');
+const request        = require('request');
+const config = require('./config');
 
 /**
  * https://localhost:4000/
@@ -34,8 +36,19 @@ exports.signup = (req, res) => {
  * @param   {Object}   res - The response to show the server is running
  * @returns {undefined}
  */
-exports.signupForm = (req, res) => {
-  res.send('Thanks for using this service!');
+exports.signupForm = (req, res, next) => {
+  const basicAuth = new Buffer(`${config.client.clientID}:${config.client.clientSecret}`).toString('base64');
+
+    request.post(
+        "http://localhost:3000/api/user", {
+            form: req.body,
+    headers: {
+      Authorization: `Basic ${basicAuth}`,
+    },
+        }, (error,response,body) => {
+            next();
+        }
+    )
 };
 
 
